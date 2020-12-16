@@ -16,3 +16,6 @@ from .reservation import Reservation
 from .message import Message
 from .userreview import UserReview
 from .itemreview import ItemReview
+from .rating import Rating
+from .descriptionaccuracy import DescriptionAccuracy
+from .itemreviewimage import ItemReviewImage
