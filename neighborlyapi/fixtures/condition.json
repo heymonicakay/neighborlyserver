@@ -1,0 +1,30 @@
+[
+    {
+        "model": "neighborlyapi.condition",
+        "pk": 1,
+        "fields": {
+            "name": "Like New"
+        }
+    },
+    {
+        "model": "neighborlyapi.condition",
+        "pk": 2,
+        "fields": {
+            "name": "Almost Like New"
+        }
+    },
+    {
+        "model": "neighborlyapi.condition",
+        "pk": 3,
+        "fields": {
+            "name": "Still Pretty Good"
+        }
+    },
+    {
+        "model": "neighborlyapi.condition",
+        "pk": 4,
+        "fields": {
+            "name": "Seen Better Days"
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "model": "neighborlyapi.reservationstatus",
+        "pk": 1,
+        "fields": {
+            "label": "Pending"
+        }
+    },
+    {
+        "model": "neighborlyapi.reservationstatus",
+        "pk": 2,
+        "fields": {
+            "label": "Approved"
+        }
+    },
+    {
+        "model": "neighborlyapi.reservationstatus",
+        "pk": 3,
+        "fields": {
+            "label": "Declined"
+        }
+    },
+    {
+        "model": "neighborlyapi.reservationstatus",
+        "pk": 4,
+        "fields": {
+            "label": "Cancelled"
+        }
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "model": "neighborlyapi.responsiveness",
+        "pk": 1,
+        "fields": {
+            "label": "Same Day"
+        }
+    },
+    {
+        "model": "neighborlyapi.responsiveness",
+        "pk": 2,
+        "fields": {
+            "label": "Next Day"
+        }
+    },
+    {
+        "model": "neighborlyapi.responsiveness",
+        "pk": 3,
+        "fields": {
+            "label": "Within A Week"
+        }
+    },
+    {
+        "model": "neighborlyapi.responsiveness",
+        "pk": 4,
+        "fields": {
+            "label": "Over A Week"
+        }
+    },
+    {
+        "model": "neighborlyapi.responsiveness",
+        "pk": 5,
+        "fields": {
+            "label": "Did Not Respond"
+        }
+    }
+]

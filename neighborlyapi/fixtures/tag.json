@@ -1,0 +1,303 @@
+[
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 1,
+        "fields": {
+            "label": "toad"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 2,
+        "fields": {
+            "label": "dressrobes"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 3,
+        "fields": {
+            "label": "yuleball"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 4,
+        "fields": {
+            "label": "muggles"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 5,
+        "fields": {
+            "label": "unicorn"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 6,
+        "fields": {
+            "label": "firstyears"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 7,
+        "fields": {
+            "label": "parseltongue"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 8,
+        "fields": {
+            "label": "mandrake"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 9,
+        "fields": {
+            "label": "charms"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 10,
+        "fields": {
+            "label": "potions"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 11,
+        "fields": {
+            "label": "divination"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 12,
+        "fields": {
+            "label": "herbology"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 13,
+        "fields": {
+            "label": "owl"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 14,
+        "fields": {
+            "label": "ravenclaw"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 15,
+        "fields": {
+            "label": "slytherin"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 16,
+        "fields": {
+            "label": "griffindor"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 17,
+        "fields": {
+            "label": "hufflepuff"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 18,
+        "fields": {
+            "label": "petrificustotalus"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 19,
+        "fields": {
+            "label": "wand"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 20,
+        "fields": {
+            "label": "quidditch"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 21,
+        "fields": {
+            "label": "hogwartsexpress"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 22,
+        "fields": {
+            "label": "stupid"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 23,
+        "fields": {
+            "label": "holidays"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 24,
+        "fields": {
+            "label": "centaur"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 25,
+        "fields": {
+            "label": "everyflavorbeans"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 26,
+        "fields": {
+            "label": "quill"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 27,
+        "fields": {
+            "label": "transfiguration"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 28,
+        "fields": {
+            "label": "broomstick"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 29,
+        "fields": {
+            "label": "floo"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 30,
+        "fields": {
+            "label": "polyjuice"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 31,
+        "fields": {
+            "label": "paranoid"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 32,
+        "fields": {
+            "label": "homesweethome"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 33,
+        "fields": {
+            "label": "forbiddenforest"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 34,
+        "fields": {
+            "label": "youknowwho"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 35,
+        "fields": {
+            "label": "werewolves"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 36,
+        "fields": {
+            "label": "winning"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 37,
+        "fields": {
+            "label": "moonbeam"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 38,
+        "fields": {
+            "label": "nimbustwothousand"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 39,
+        "fields": {
+            "label": "riddles"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 40,
+        "fields": {
+            "label": "lifeanddeath"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 41,
+        "fields": {
+            "label": "beasts"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 42,
+        "fields": {
+            "label": "snitch"
+        }
+    },
+    {
+        "model": "neighborlyapi.tag",
+        "pk": 43,
+        "fields": {
+            "label": "jinx"
+        }
+    }
+]
