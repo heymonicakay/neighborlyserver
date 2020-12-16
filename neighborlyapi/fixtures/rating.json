@@ -1,0 +1,37 @@
+[
+    {
+        "model": "neighborlyapi.rating",
+        "pk": 1,
+        "fields": {
+            "label": "Never Again"
+        }
+    },
+    {
+        "model": "neighborlyapi.rating",
+        "pk": 2,
+        "fields": {
+            "label": "Not Good"
+        }
+    },
+    {
+        "model": "neighborlyapi.rating",
+        "pk": 3,
+        "fields": {
+            "label": "Okay... I Guess"
+        }
+    },
+    {
+        "model": "neighborlyapi.rating",
+        "pk": 4,
+        "fields": {
+            "label": "Pretty Great"
+        }
+    },
+    {
+        "model": "neighborlyapi.rating",
+        "pk": 5,
+        "fields": {
+            "label": "Absolutely Fantastic"
+        }
+    }
+]
