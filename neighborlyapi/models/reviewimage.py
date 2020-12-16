@@ -3,7 +3,9 @@ from django.db import models
 from . import Item
 
 class ItemReviewImage(models.Model):
-    """Item Review Image Model"""
+    """
+    Item Review Image class
+    """
     image_url = models.ImageField(
         upload_to='itemreviewimages', height_field=None,
         width_field=None, max_length=None, null=True)

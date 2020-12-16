@@ -16,6 +16,28 @@ class Neighbor(models.Model):
     zip = models.CharField(max_length=12)
 
     @property
+    def reviews(self):
+        """
+        Property to access each users's associated userreview instances
+        """
+        try:
+            reviews = UserReview.objects.filter(user=self)
+            return reviews
+        except UserReview.DoesNotExist:
+            reviews = null
+            return reviews
+
+    @property
+    def review_count(self):
+        try:
+            reviews = UserReview.objects.filter(user=self)
+            total = len(reviews)
+            return total
+        except UserReview.DoesNotExist:
+            total = 0
+            return total
+
+    @property
     def username(self):
         """This makes the username property accessible directly from the Neighbor"""
         return self.user.username

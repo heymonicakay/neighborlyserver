@@ -112,8 +112,8 @@ class Item(models.Model):
     @property
     def review_count(self):
         try:
-            reviews = ItemReview.objects.filter(product=self)
-            total = len(likes)
+            reviews = ItemReview.objects.filter(item=self)
+            total = len(reviews)
             return total
         except ItemReview.DoesNotExist:
             total = 0
