@@ -18,7 +18,7 @@ class UserReview(models.Model):
         "Rating", on_delete=models.DO_NOTHING)
     responsiveness = models.ForeignKey(
         "Responsiveness", on_delete=models.DO_NOTHING)
-    usertype = models.ForeignKey(
+    user_type = models.ForeignKey(
         "UserType", on_delete=models.DO_NOTHING)
     created_date = models.DateField(
         auto_now_add=True)
