@@ -5,6 +5,9 @@ from . import Item
 class ItemReviewImage(models.Model):
     """
     Item Review Image class
+
+    Purpose: Create ReviewImage instances
+    Associated Models: 
     """
     image_url = models.ImageField(
         upload_to='itemreviewimages', height_field=None,

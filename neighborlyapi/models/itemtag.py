@@ -4,6 +4,9 @@ from django.db import models
 class ItemTag(models.Model):
     """
     Item Tag class
+
+    Purpose: Create ItemTag instances
+    Associated Models: 
     """
     tag = models.ForeignKey(
         "Tag", on_delete=models.CASCADE, related_name="items")

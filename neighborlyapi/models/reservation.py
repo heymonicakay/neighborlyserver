@@ -5,6 +5,9 @@ from . import Item, ReservationStatus
 class Reservation(models.Model):
     """
     Reservation class
+
+    Purpose: Create Reservation instances
+    Associated Models: 
     """
     item = models.ForeignKey(
         Item, on_delete=models.CASCADE, related_name="reservations")

@@ -5,6 +5,9 @@ from . import Item, MessageStatus
 class Message(models.Model):
     """
     Message class
+
+    Purpose: Create Message instances
+    Associated Models: 
     """
     reservation = models.ForeignKey(
         Reservation, on_delete=models.CASCADE, related_name="messages")

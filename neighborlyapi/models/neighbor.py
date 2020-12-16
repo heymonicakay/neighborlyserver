@@ -5,6 +5,9 @@ from django.conf import settings
 class Neighbor(models.Model):
     """
     Neighbor class
+
+    Purpose: Create Neighbor instances
+    Associated Models: 
     """
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

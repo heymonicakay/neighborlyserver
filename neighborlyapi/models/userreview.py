@@ -5,7 +5,7 @@ class UserReview(models.Model):
     """
     User Review class
 
-    Purpose: Create Condition instances
+    Purpose: Create UserReview instances
     Associated Models: Neighbor
     """
     reservation = models.ForeignKey(
