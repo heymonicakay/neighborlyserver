@@ -1,0 +1,16 @@
+[
+    {
+        "model": "neighborlyapi.usertype",
+        "pk": 1,
+        "fields": {
+            "label": "Borrower"
+        }
+    },
+    {
+        "model": "neighborlyapi.usertype",
+        "pk": 2,
+        "fields": {
+            "label": "Lender"
+        }
+    }
+]

@@ -26,5 +26,12 @@
         "fields": {
             "label": "Cancelled"
         }
+    },
+    {
+        "model": "neighborlyapi.reservationstatus",
+        "pk": 5,
+        "fields": {
+            "label": "Expired"
+        }
     }
 ]
