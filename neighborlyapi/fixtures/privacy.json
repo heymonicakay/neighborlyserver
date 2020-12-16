@@ -3,21 +3,21 @@
         "model": "neighborlyapi.privacy",
         "pk": 1,
         "fields": {
-            "name": "Friends Only"
+            "label": "Friends Only"
         }
     },
     {
         "model": "neighborlyapi.privacy",
         "pk": 2,
         "fields": {
-            "name": "My Neighbors Only"
+            "label": "Neighbors Only"
         }
     },
     {
         "model": "neighborlyapi.privacy",
         "pk": 3,
         "fields": {
-            "name": "Everyone"
+            "label": "Anyone & Everyone"
         }
     }
 ]

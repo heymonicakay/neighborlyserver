@@ -3,49 +3,49 @@
         "model": "neighborlyapi.category",
         "pk": 1,
         "fields": {
-            "name": "Tools"
+            "label": "Tools"
         }
     },
     {
         "model": "neighborlyapi.category",
         "pk": 2,
         "fields": {
-            "name": "Auto"
+            "label": "Auto"
         }
     },
     {
         "model": "neighborlyapi.category",
         "pk": 3,
         "fields": {
-            "name": "Technology"
+            "label": "Technology"
         }
     },
     {
         "model": "neighborlyapi.category",
         "pk": 4,
         "fields": {
-            "name": "Arts & Crafts"
+            "label": "Arts & Crafts"
         }
     },
     {
         "model": "neighborlyapi.category",
         "pk": 5,
         "fields": {
-            "name": "Clothes"
+            "label": "Clothes"
         }
     },
     {
         "model": "neighborlyapi.category",
         "pk": 6,
         "fields": {
-            "name": "Games/Toys"
+            "label": "Games/Toys"
         }
     },
     {
         "model": "neighborlyapi.category",
         "pk": 7,
         "fields": {
-            "name": "Kitchen"
+            "label": "Kitchen"
         }
     }
 ]
