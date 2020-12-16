@@ -6,9 +6,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
-from neighborlyapi.views import register_user, login_user
+from neighborlyapi.models import *
+from neighborlyapi.views import *
 
 router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'users', User, 'user')
+
 
 urlpatterns = [
     path('', include(router.urls)),

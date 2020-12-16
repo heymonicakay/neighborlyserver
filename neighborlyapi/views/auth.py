@@ -1,5 +1,5 @@
 """
-View Set Module
+Auth View Set Module
 Handles authentication and new user registration
 """
 import json
@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.files.base import ContentFile
 from rest_framework import status
 from rest_framework.authtoken.models import Token
-from neighborlyapi.models import Neighbor
+from neighborlyapi.models.neighbor import Neighbor
 
 @csrf_exempt
 def login_user(request):
@@ -20,6 +20,18 @@ def login_user(request):
     Handles authentication of an existing User
     Method arguments:
         request -- The full HTTP request object
+    URL: http://localhost:8000/login
+    Request Method: POST
+    Body:
+        {
+            "username": "harrypotter",
+            "password": "harry"
+        }
+    Response:
+        {
+        "valid": true,
+        "token": "3ee1a4e07806f94208c787764843c2fa0cc3313b"
+        }
     '''
 
     req_body = json.loads(request.body.decode())
@@ -44,9 +56,31 @@ def login_user(request):
 
 @csrf_exempt
 def register_user(request):
-    '''Handles the creation of a new user for authentication
+    '''
+    Handles the creation of a new user for authentication
     Method arguments:
         request -- The full HTTP request object
+    URL: http://localhost:8000/register
+    Request Method: POST
+    Body:
+        {
+        "username": "harrypotter",
+        "email": "harry@potter.com",
+        "password": "harry",
+        "first_name": "Harry",
+        "last_name": "Potter",
+        "bio": "Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.",
+        "phone_number": "555-555-5555",
+        "street_one": "4 Privet Drive",
+        "street_two": "Under The Staircase",
+        "city": "Surrey",
+        "state": "TN",
+        "zip": "37206"
+        }
+    Response:
+        {
+        "token": "3ee1a4e07806f94208c787764843c2fa0cc3313b"
+        }
     '''
 
     # Load the JSON string of the request body into a dict
