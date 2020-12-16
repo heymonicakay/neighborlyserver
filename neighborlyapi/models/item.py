@@ -13,7 +13,6 @@ class Item(models.Model):
     description = models.CharField(max_length=255,)
     brand = models.CharField(max_length=255,)
     serial_number = models.CharField(max_length=100,)
-    quantity = models.IntegerField(validators=[MinValueValidator(0)],)
     category = models.ForeignKey(
         Category, on_delete=models.SET_DEFAULT, default=1 related_name="items")
     condition = models.ForeignKey(
@@ -33,7 +32,18 @@ class Item(models.Model):
         """
 
         item_tags = self.itemtag_set.all()
-        return [ t.label for t in item_tags]
+        return [item_tags]
+
+    @property
+    def reviews(self):
+        """
+        Property to access each items's associated itemreview instances
+
+        itemreviews_set is a queryset of itemreview objects for which the item instance(aka self)'s primary key exists as that itemreview's "item_id" foreign key
+        """
+
+        reviews = self.item_reviews_set.all()
+        return [reviews]
 
     @property
     def active(self):
