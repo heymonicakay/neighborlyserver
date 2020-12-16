@@ -7,13 +7,14 @@ class Neighbor(models.Model):
     Neighbor class
 
     Purpose: Create Neighbor instances
-    Associated Models: 
+    Associated Models:
     """
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     bio = models.CharField(max_length=500)
-    streetOne = models.CharField(max_length=100)
-    streetTwo = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=15)
+    street_one = models.CharField(max_length=100)
+    street_two = models.CharField(max_length=100)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
     zip = models.CharField(max_length=12)
