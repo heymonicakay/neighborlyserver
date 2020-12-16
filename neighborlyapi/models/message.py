@@ -3,7 +3,9 @@ from django.db import models
 from . import Item, MessageStatus
 
 class Message(models.Model):
-    """Message Model"""
+    """
+    Message class
+    """
     reservation = models.ForeignKey(
         Reservation, on_delete=models.CASCADE, related_name="messages")
     sender = models.ForeignKey(

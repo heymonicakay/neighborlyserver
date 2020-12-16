@@ -3,7 +3,9 @@ from django.db import models
 from . import Item, ReservationStatus
 
 class Reservation(models.Model):
-    """Reservation Model"""
+    """
+    Reservation class
+    """
     item = models.ForeignKey(
         Item, on_delete=models.CASCADE, related_name="reservations")
     lender = models.ForeignKey(

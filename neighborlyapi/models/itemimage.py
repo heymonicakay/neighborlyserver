@@ -3,7 +3,12 @@ from django.db import models
 from . import Item
 
 class ItemImage(models.Model):
-    """ItemImage Model"""
+    """
+    ItemImage Model
+
+    Purpose: Create ItemImage instances
+    Associated Models: 
+    """
     image_url = models.ImageField(
         upload_to='itemimages', height_field=None,
         width_field=None, max_length=None, null=True)

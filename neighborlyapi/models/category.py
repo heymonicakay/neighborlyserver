@@ -2,5 +2,10 @@
 from django.db import models
 
 class Category(models.Model):
-    """Category Model"""
-    label = models.CharField(max_length=25)
+    """
+    Category class
+
+    Purpose: Create Category instances
+    Associated Models: Item
+    """
+    label = models.CharField(max_length=50)

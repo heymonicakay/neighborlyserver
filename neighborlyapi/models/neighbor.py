@@ -3,10 +3,12 @@ from django.db import models
 from django.conf import settings
 
 class Neighbor(models.Model):
-    """Neighbor Model"""
-    bio = models.CharField(max_length=500)
+    """
+    Neighbor class
+    """
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    bio = models.CharField(max_length=500)
     streetOne = models.CharField(max_length=100)
     streetTwo = models.CharField(max_length=100)
     city = models.CharField(max_length=50)

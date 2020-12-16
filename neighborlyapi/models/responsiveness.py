@@ -2,5 +2,7 @@
 from django.db import models
 
 class Responsiveness(models.Model):
-    """Responsiveness Model"""
+    """
+    Responsiveness class
+    """
     label = models.CharField(max_length=25)

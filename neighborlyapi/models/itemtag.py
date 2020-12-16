@@ -2,7 +2,9 @@
 from django.db import models
 
 class ItemTag(models.Model):
-    """Item Tag Model"""
+    """
+    Item Tag class
+    """
     tag = models.ForeignKey(
         "Tag", on_delete=models.CASCADE, related_name="items")
     item = models.ForeignKey(

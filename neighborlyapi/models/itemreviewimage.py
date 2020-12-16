@@ -3,7 +3,9 @@ from django.db import models
 from . import ItemReview
 
 class ItemReviewImage (models.Model):
-    """Item Review Image Model"""
+    """
+    Item Review Image class
+    """
     item_review = models.ForeignKey(
         ItemReview, on_delete=models.CASCADE, related_name="images")
     image_url = models.ImageField(

@@ -2,5 +2,7 @@
 from django.db import models
 
 class MessageStatus(models.Model):
-    """Message Status Model"""
+    """
+    Message Status class
+    """
     label = models.CharField(max_length=25)

@@ -3,35 +3,40 @@
         "model": "neighborlyapi.rating",
         "pk": 1,
         "fields": {
-            "label": "Never Again"
+            "label": "Never Again",
+            "score": 1
         }
     },
     {
         "model": "neighborlyapi.rating",
         "pk": 2,
         "fields": {
-            "label": "Not Good"
+            "label": "Not Good",
+            "score": 2
         }
     },
     {
         "model": "neighborlyapi.rating",
         "pk": 3,
         "fields": {
-            "label": "Okay... I Guess"
+            "label": "Okay... I Guess",
+            "score": 3
         }
     },
     {
         "model": "neighborlyapi.rating",
         "pk": 4,
         "fields": {
-            "label": "Pretty Great"
+            "label": "Pretty Great",
+            "score": 4
         }
     },
     {
         "model": "neighborlyapi.rating",
         "pk": 5,
         "fields": {
-            "label": "Absolutely Fantastic"
+            "label": "Absolutely Fantastic",
+            "score": 5
         }
     }
 ]
