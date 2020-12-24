@@ -1,16 +1,15 @@
 """Item Review Image Model Module"""
 from django.db import models
-from . import Item
+from .itemreview import ItemReview
 
 class ItemReviewImage(models.Model):
     """
     Item Review Image class
 
     Purpose: Create ReviewImage instances
-    Associated Models: 
+    Associated Models:
     """
-    image_url = models.ImageField(
-        upload_to='itemreviewimages', height_field=None,
-        width_field=None, max_length=None, null=True)
+    image = models.ImageField(
+        upload_to='itemreviewimages/', null=True, blank=True)
     item_review = models.ForeignKey(
-        ItemReview, on_delete=models.DO_NOTHING, related_name="item_review_images")
+        ItemReview, on_delete=models.CASCADE, related_name="images", blank=True, null=True)

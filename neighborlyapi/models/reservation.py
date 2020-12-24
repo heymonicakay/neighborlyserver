@@ -1,20 +1,20 @@
 """Reservation Model Module"""
 from django.db import models
-from . import Item, ReservationStatus
+from .reservationstatus import ReservationStatus
 
 class Reservation(models.Model):
     """
     Reservation class
 
     Purpose: Create Reservation instances
-    Associated Models: 
+    Associated Models:
     """
     item = models.ForeignKey(
-        Item, on_delete=models.CASCADE, related_name="reservations")
+        "Item", on_delete=models.CASCADE, related_name="reservations")
     lender = models.ForeignKey(
-        Neighbor, on_delete=models.CASCADE, related_name="reservations_received")
+        "Neighbor", on_delete=models.CASCADE, related_name="reservations_received")
     borrower = models.ForeignKey(
-        Neighbor, on_delete=models.CASCADE, related_name="reservations_sent")
+        "Neighbor", on_delete=models.CASCADE, related_name="reservations_sent")
     scheduled_start = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     scheduled_end = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     start = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)

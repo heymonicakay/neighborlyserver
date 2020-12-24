@@ -1,0 +1,42 @@
+[
+    {
+        "model": "neighborlyapi.itemtag",
+        "pk": 1,
+        "fields": {
+            "tag": 6,
+            "item": 1
+        }
+    },
+    {
+        "model": "neighborlyapi.itemtag",
+        "pk": 2,
+        "fields": {
+            "tag": 20,
+            "item": 1
+        }
+    },
+    {
+        "model": "neighborlyapi.itemtag",
+        "pk": 3,
+        "fields": {
+            "tag": 9,
+            "item": 3
+        }
+    },
+    {
+        "model": "neighborlyapi.itemtag",
+        "pk": 4,
+        "fields": {
+            "tag": 10,
+            "item": 2
+        }
+    },
+    {
+        "model": "neighborlyapi.itemtag",
+        "pk": 5,
+        "fields": {
+            "tag": 12,
+            "item": 2
+        }
+    }
+]

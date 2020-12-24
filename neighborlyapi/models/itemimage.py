@@ -1,13 +1,13 @@
 """Item Image Model Module"""
 from django.db import models
-from . import Item
+from .item import Item
 
 class ItemImage(models.Model):
     """
     ItemImage Model
 
     Purpose: Create ItemImage instances
-    Associated Models: 
+    Associated Models:
     """
     image_url = models.ImageField(
         upload_to='itemimages', height_field=None,

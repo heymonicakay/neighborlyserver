@@ -5,9 +5,7 @@ from .category import Category
 from .condition import Condition
 from .item import Item
 from .itemimage import ItemImage
-from .itemstatus import ItemStatus
 from .itemtag import ItemTag
-from .privacy import Privacy
 from .reservationstatus import ReservationStatus
 from .responsiveness import Responsiveness
 from .reviewimage import ReviewImage
@@ -19,3 +17,4 @@ from .itemreview import ItemReview
 from .rating import Rating
 from .descriptionaccuracy import DescriptionAccuracy
 from .itemreviewimage import ItemReviewImage
+from .profileimage import ProfileImage

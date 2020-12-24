@@ -7,9 +7,10 @@
             "phone_number": "555-555-5555",
             "street_one": "4 Privet Drive",
             "street_two": "Under The Staircase",
-            "city": "Surrey",
+            "city": "Nashville",
             "state": "TN",
-            "zip": "37206"
+            "zip": "37206",
+            "user": 1
         }
     }
 ]

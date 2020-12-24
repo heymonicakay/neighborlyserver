@@ -1,13 +1,17 @@
 """Message Model Module"""
 from django.db import models
-from . import Item, MessageStatus
+from neighborlyapi.models.item import Item
+from neighborlyapi.models.messagestatus import MessageStatus
+from .reservation import Reservation
+from .neighbor import Neighbor
+
 
 class Message(models.Model):
     """
     Message class
 
     Purpose: Create Message instances
-    Associated Models: 
+    Associated Models:
     """
     reservation = models.ForeignKey(
         Reservation, on_delete=models.CASCADE, related_name="messages")
@@ -19,13 +23,14 @@ class Message(models.Model):
         MessageStatus, on_delete=models.DO_NOTHING)
     sent_date = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     read_date = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    body = models.TextField(max_length=2000)
 
-    @property
-    def returned(self):
-        """Unmapped Prop"""
-        return self.__returned
+    # @property
+    # def returned(self):
+    #     """Unmapped Prop"""
+    #     return self.__returned
 
-    @returned.setter
-    def returned(self, value):
-        """Unmapped Prop"""
-        self.__returned = value
+    # @returned.setter
+    # def returned(self, value):
+    #     """Unmapped Prop"""
+    #     self.__returned = value

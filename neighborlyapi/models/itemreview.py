@@ -1,6 +1,9 @@
 """Item Review Model Module"""
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from . import Reservation, Neighbor, ItemRating, DescriptionAccuracy, Item
+from .reservation import Reservation
+from .neighbor import Neighbor
+from .descriptionaccuracy import DescriptionAccuracy
 
 class ItemReview(models.Model):
     """
@@ -14,9 +17,8 @@ class ItemReview(models.Model):
     reviewer = models.ForeignKey(
         Neighbor, on_delete=models.CASCADE, related_name="items_reviewed")
     item = models.ForeignKey(
-        Item, on_delete=models.CASCADE, related_name="item_reviews")
-    rating = models.ForeignKey(
-        ItemRating, on_delete=models.DO_NOTHING)
+        "Item", on_delete=models.CASCADE, related_name="item_reviews")
+    rating = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(5)], null=True)
     description_accuracy = models.ForeignKey(
         DescriptionAccuracy, on_delete=models.DO_NOTHING)
     created_date = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)

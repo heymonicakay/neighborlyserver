@@ -16,11 +16,14 @@ class UserReview(models.Model):
         "Neighbor", on_delete=models.CASCADE, related_name="reviews")
     rating = models.ForeignKey(
         "Rating", on_delete=models.DO_NOTHING)
-    responsiveness = models.ForeignKey(
-        "Responsiveness", on_delete=models.DO_NOTHING)
     user_type = models.ForeignKey(
         "UserType", on_delete=models.DO_NOTHING)
     created_date = models.DateField(
         auto_now_add=True)
     details = models.DateField(
         auto_now=False, auto_now_add=False, null=True, blank=True)
+
+    # TODO Create Responsiveness property
+
+    # TODO Add Max and Min Validation
+    

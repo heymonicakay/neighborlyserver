@@ -1,7 +1,10 @@
 """Item Model Module"""
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from . import Neighbor, Category, Condition, Privacy, ItemStatus, ItemReview
+from neighborlyapi.models.neighbor import Neighbor
+from neighborlyapi.models.category import Category
+from neighborlyapi.models.condition import Condition
+from neighborlyapi.models.itemreview import ItemReview
 
 class Item(models.Model):
     """
@@ -21,17 +24,17 @@ class Item(models.Model):
     listed_date = models.DateField(
         auto_now=False, auto_now_add=False, null=True, blank=True)
     brand = models.CharField(
-        max_length=255)
+        max_length=255, null=True,blank=True)
     serial_number = models.CharField(
-        max_length=100)
+        max_length=100, null=True, blank=True)
     category = models.ForeignKey(
-        Category, on_delete=models.SET_DEFAULT, default=1 related_name="items")
+        Category, on_delete=models.SET_DEFAULT, default=1, related_name="items")
     condition = models.ForeignKey(
         Condition, on_delete=models.DO_NOTHING)
-    privacy = models.ForeignKey(
-        Privacy, on_delete=models.DO_NOTHING)
-    status = models.ForeignKey(
-        ItemStatus, on_delete=models.DO_NOTHING)
+
+    # TODO: Add Unmapped Privacy Prop
+    # TODO: Add Unmapped item status Prop
+
 
     @property
     def tags(self):

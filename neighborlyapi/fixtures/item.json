@@ -1,0 +1,47 @@
+[
+    {
+        "model": "neighborlyapi.item",
+        "pk": 1,
+        "fields": {
+            "owner": 1,
+            "name": "Broom",
+            "description": "4 Privet Drive",
+            "created_date": "2020-12-04",
+            "listed_date": null,
+            "brand": "TN",
+            "serial_number": "451351664879",
+            "category": 1,
+            "condition": 4
+        }
+    },
+    {
+        "model": "neighborlyapi.item",
+        "pk": 2,
+        "fields": {
+            "owner": 1,
+            "name": "Cauldron",
+            "description": "Heavy. Not leaky.",
+            "created_date": "2020-12-18",
+            "listed_date": null,
+            "brand": "Potage's",
+            "serial_number": "4531364684798",
+            "category": 7,
+            "condition": 5
+        }
+    },
+    {
+        "model": "neighborlyapi.item",
+        "pk": 3,
+        "fields": {
+            "owner": 1,
+            "name": "Crystal Ball",
+            "description": "The Magic Kind",
+            "created_date": "2020-11-18",
+            "listed_date": null,
+            "brand": "TN",
+            "serial_number": "45313646845566",
+            "category": 3,
+            "condition": 3
+        }
+    }
+]
