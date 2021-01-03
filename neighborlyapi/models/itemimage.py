@@ -9,7 +9,7 @@ class ItemImage(models.Model):
     Purpose: Create ItemImage instances
     Associated Models:
     """
-    image_url = models.ImageField(
+    image = models.ImageField(
         upload_to='itemimages', height_field=None,
         width_field=None, max_length=None, null=True)
     item = models.ForeignKey(

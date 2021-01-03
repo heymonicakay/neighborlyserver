@@ -1,10 +1,11 @@
 """Item Model Module"""
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from neighborlyapi.models.neighbor import Neighbor
-from neighborlyapi.models.category import Category
-from neighborlyapi.models.condition import Condition
-from neighborlyapi.models.itemreview import ItemReview
+from .neighbor import Neighbor
+from .category import Category
+from .condition import Condition
+from .itemreview import ItemReview
+
 
 class Item(models.Model):
     """
@@ -24,29 +25,16 @@ class Item(models.Model):
     listed_date = models.DateField(
         auto_now=False, auto_now_add=False, null=True, blank=True)
     brand = models.CharField(
-        max_length=255, null=True,blank=True)
+        max_length=255, null=True, blank=True)
     serial_number = models.CharField(
         max_length=100, null=True, blank=True)
     category = models.ForeignKey(
-        Category, on_delete=models.SET_DEFAULT, default=1, related_name="items")
+        Category, on_delete=models.SET_DEFAULT, default=1, related_name="cat_items")
     condition = models.ForeignKey(
-        Condition, on_delete=models.DO_NOTHING)
+        Condition, on_delete=models.DO_NOTHING, related_name="cond_items")
 
     # TODO: Add Unmapped Privacy Prop
     # TODO: Add Unmapped item status Prop
-
-
-    @property
-    def tags(self):
-        """
-        Property to access each items's associated tag instances
-
-        itemtag_set is a queryset of itemtags objects for which the item instance
-        (aka self)'s primary key exists as that itemtag's "item_id" foreign key
-        """
-
-        item_tags = self.itemtag_set.all()
-        return [item_tags]
 
     @property
     def reviews(self):
@@ -79,7 +67,7 @@ class Item(models.Model):
         """
         listed = self.listed_date
 
-        if listed is not None:
+        if listed is None:
             return True
         else:
             return False
@@ -130,9 +118,9 @@ class Item(models.Model):
     @property
     def owner_username(self):
         """Unmapped Prop"""
-        return self.owner.username
+        return self.owner.user.username
 
     @property
     def owner_is_active(self):
         """Unmapped Prop"""
-        return self.owner.is_active
+        return self.owner.user.is_active

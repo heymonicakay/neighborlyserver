@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.decorators import action
 from neighborlyapi.models.rating import Rating
 
-class Rating(ViewSet):
+class Ratings(ViewSet):
     """Ratings"""
 
     def list(self, request):

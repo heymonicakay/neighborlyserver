@@ -1,13 +1,13 @@
 [
     {
-        "model": "neighborlyapi.usertype",
+        "model": "neighborlyapi.typeofuser",
         "pk": 1,
         "fields": {
             "label": "Borrower"
         }
     },
     {
-        "model": "neighborlyapi.usertype",
+        "model": "neighborlyapi.typeofuser",
         "pk": 2,
         "fields": {
             "label": "Lender"

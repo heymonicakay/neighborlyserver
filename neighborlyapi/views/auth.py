@@ -81,6 +81,25 @@ def register_user(request):
         {
         "token": "3ee1a4e07806f94208c787764843c2fa0cc3313b"
         }
+
+    {
+        "username": "hermionegranger",
+        "email": "hermione@granger.com",
+        "password": "harry",
+        "first_name": "Hermione",
+        "last_name": "Granger",
+        "bio": "Red hair crookshanks bludger Marauder’s Map Prongs sunshine daisies butter mellow Ludo Bagman. Beaters gobbledegook N.E.W.T., Honeydukes eriseD inferi Wormtail. Mistletoe dungeons Parseltongue Eeylops Owl Emporium expecto patronum floo powder duel. Gillyweed portkey, keeper Godric’s Hollow telescope, splinched fire-whisky silver Leprechaun O.W.L. stroke the spine. Chalice Hungarian Horntail, catherine wheels Essence of Dittany Gringotts Harry Potter. Prophecies Yaxley green eyes Remembrall horcrux hand of the servant. Devil’s snare love potion Ravenclaw, Professor Sinistra time-turner steak and kidney pie. Cabbage Daily Prophet letters from no one Dervish and Banges leg.",
+        "phone_number": "444-444-4444",
+        "street_one": "5 Diagon Alley",
+        "street_two": "178",
+        "city": "Nottingham",
+        "state": "TN",
+        "zip": "37206"
+        }
+    Response:
+    {
+    "token": "d34d9f9231daca54395213eeaf40cc3e1fe6c921"
+    }
     '''
 
     # Load the JSON string of the request body into a dict

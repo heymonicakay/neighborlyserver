@@ -16,5 +16,23 @@
             "groups": [],
             "user_permissions": []
         }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$2VNEWZa1q3Hy$jpymwfsVnXT0ArVnAcO+5hE9oCihvNrCGdZBjXLPUUw=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "hermionegranger",
+            "first_name": "Hermione",
+            "last_name": "Granger",
+            "email": "hermione@granger.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2019-08-30T14:51:39.989Z",
+            "groups": [],
+            "user_permissions": []
+        }
     }
 ]

@@ -17,7 +17,7 @@ class UserReview(models.Model):
     rating = models.ForeignKey(
         "Rating", on_delete=models.DO_NOTHING)
     user_type = models.ForeignKey(
-        "UserType", on_delete=models.DO_NOTHING)
+        "TypeOfUser", on_delete=models.DO_NOTHING)
     created_date = models.DateField(
         auto_now_add=True)
     details = models.DateField(
@@ -26,4 +26,3 @@ class UserReview(models.Model):
     # TODO Create Responsiveness property
 
     # TODO Add Max and Min Validation
-    

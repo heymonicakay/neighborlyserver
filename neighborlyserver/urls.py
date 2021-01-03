@@ -10,7 +10,13 @@ from neighborlyapi.models import *
 from neighborlyapi.views import *
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'users', User, 'user')
+router.register(r'users', Users, 'user')
+router.register(r'categories', Categories, 'category')
+router.register(r'conditions', Conditions, 'condition')
+router.register(r'tags', Tags, 'tag')
+router.register(r'itemtags', ItemTags, 'itemtag')
+router.register(r'descriptionaccuracys', DescriptionAccuracys, 'descriptionaccuracy')
+router.register(r'items', Items, 'item')
 
 
 urlpatterns = [

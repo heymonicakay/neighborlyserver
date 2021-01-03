@@ -3,7 +3,7 @@
         "model": "neighborlyapi.category",
         "pk": 1,
         "fields": {
-            "label": "Tools"
+            "label": "Uncategorized"
         }
     },
     {

@@ -10,5 +10,7 @@ class ItemTag(models.Model):
     Purpose: Create ItemTag instances
     Associated Models:
     """
-    tag = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name="itemtags")
-    item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name="itemtags")
+    tag = models.ForeignKey(
+        Tag, on_delete=models.CASCADE, related_name="itemtags")
+    item = models.ForeignKey(
+        Item, on_delete=models.CASCADE, related_name="itemtags")

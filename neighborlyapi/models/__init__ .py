@@ -1,10 +1,11 @@
 """docstrings"""
 from .neighbor import Neighbor
 from .tag import Tag
+from .typeofuser import TypeOfUser
 from .category import Category
 from .condition import Condition
 from .item import Item
-from .itemimage import ItemImage
+from .item_image import ItemImage
 from .itemtag import ItemTag
 from .reservationstatus import ReservationStatus
 from .responsiveness import Responsiveness

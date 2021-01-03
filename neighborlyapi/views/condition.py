@@ -1,4 +1,6 @@
 """View module for handling requests about conditions"""
+from django.http import HttpResponseServerError
+from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
@@ -6,7 +8,7 @@ from rest_framework import status
 from rest_framework.decorators import action
 from neighborlyapi.models.condition import Condition
 
-class Condition(ViewSet):
+class Conditions(ViewSet):
     """Conditions"""
 
     def list(self, request):
@@ -24,9 +26,12 @@ class Condition(ViewSet):
         serializer = ConditionSerializer(
             conditions, many=True, context={'request': request})
 
-        return Response(serializer.data)
+        return Response(
+            serializer.data,
+            status=status.HTTP_200_OK
+        )
 
-class Condition(serializers.HyperlinkedModelSerializer):
+class ConditionSerializer(serializers.ModelSerializer):
     """JSON serializer for conditions
     Arguments:
         serializers
@@ -34,4 +39,3 @@ class Condition(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Condition
         fields = ('id', 'label')
-

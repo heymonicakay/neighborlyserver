@@ -7,7 +7,7 @@ from rest_framework import status
 from rest_framework.decorators import action
 from neighborlyapi.models.neighbor import Neighbor
 
-class User(ViewSet):
+class Users(ViewSet):
     """Users"""
 
     def list(self, request):
@@ -29,7 +29,7 @@ class User(ViewSet):
 
     def retrieve(self, request, pk=None):
         """Handles GET requests to users resource for single User
-        Written for User Profile View
+        URL: http://localhost:8000/users/1
         Returns:
             Response -- JSON serielized neighbor instance
         """
@@ -58,13 +58,23 @@ class User(ViewSet):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    """JSON serializer for Users
+
+    Arguments:
+        serializers
+    """
+    class Meta:
+        model = get_user_model()
+        fields = ('id', 'url', 'username', 'password', 'first_name', 'last_name', 'email', 'is_active', 'date_joined', 'is_staff')
+
 class NeighborSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for neighbors
     Arguments:
         serializers
     """
+    user = UserSerializer(many=False)
     class Meta:
         model = Neighbor
-        fields = ('id', 'bio', 'password', 'phone_number', 'username', 'admin',
-        'active', 'first_name', 'last_name', 'full_name', 'email', 'joined_date')
+        fields = ('id', 'bio', 'user', 'phone_number', 'full_name', 'city', 'state', 'zip' )
 

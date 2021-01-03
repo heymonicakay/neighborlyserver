@@ -1,30 +1,37 @@
-"""View module for handling requests about messages"""
+"""View module for handling requests about items"""
 from django.http import HttpResponseServerError
 from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
-from rest_framework import serializers
-from rest_framework import status
+from rest_framework import serializers, status
 from rest_framework.decorators import action
-from neighborlyapi.models.message import Message
+from neighborlyapi.models.item import Item
+from neighborlyapi.models.neighbor import Neighbor
+from neighborlyapi.models.category import Category
+from neighborlyapi.models.itemtag import ItemTag
+from neighborlyapi.models.condition import Condition
+from neighborlyapi.views.category import CategorySerializer
+from neighborlyapi.views.condition import ConditionSerializer
+from neighborlyapi.views.itemtag import TagSerializer
 
-class Messages(ViewSet):
-    """Messages"""
+
+class Items(ViewSet):
+    """Items"""
 
     def list(self, request):
         '''
-        Handles GET requests to the /messages resource
+        Handles GET requests to the /items resource
         Method arguments:
             request -- The full HTTP request object
-        URL: http://localhost:8000/messages
+        URL: http://localhost:8000/items
         Request Method: GET
         Response:
-            list of all messages
+            list of all items
         '''
-        messages = Message.objects.all()
+        items = Item.objects.all()
 
-        serializer = MessageSerializer(
-            messages, many=True, context={'request': request})
+        serializer = ItemSerializer(
+            items, many=True, context={'request': request})
 
         return Response(
             serializer.data,
@@ -33,17 +40,34 @@ class Messages(ViewSet):
 
     def create(self, request):
         '''
-        Handles Post requests to the /messages resource
+        Handles Post requests to the /items resource
         Method arguments:
             request -- The full HTTP request object
-        URL: http://localhost:8000/messages
+        URL: http://localhost:8000/items
         Request Method: POST
-        Payload: message object
+        Payload: item object
             {
-                "reservation": 1,
-                "recipient_id": 2,
-                "read_date": null,
-                "body": "THIS IS A MESSAGE BODY"
+                "name": "Spade",
+                "description": "It's a spade.",
+                "listed_date": null,
+                "brand": "The Grassroots",
+                "serial_number": "451351658888",
+                "category_id": 3,
+                "condition_id": 2,
+                "selected_tags": [
+                    {
+                        "id": 4,
+                        "label": "muggles"
+                    },
+                    {
+                        "id": 6,
+                        "label": "firstyears"
+                    },
+                    {
+                        "id": 8,
+                        "label": "mandrake"
+                    }
+                ]
             }
             Response:
             {
@@ -71,10 +95,11 @@ class Messages(ViewSet):
                 "owner_username": "harrypotter"
             }
         '''
-        sender = Neighbor.objects.get(user=request.auth.user)
-        recipient = Neighbor.objects.get(pk=request.data["recipient_id"])
+        owner = Neighbor.objects.get(user=request.auth.user)
+        category = Category.objects.get(pk=request.data["category_id"])
+        condition = Condition.objects.get(pk=request.data["condition_id"])
 
-        item = Message()
+        item = Item()
 
         item.owner = owner
         item.category = category
@@ -114,12 +139,14 @@ class Messages(ViewSet):
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
-class Message(serializers.HyperlinkedModelSerializer):
-    """JSON serializer for messages
+class ItemSerializer(serializers.ModelSerializer):
+    """JSON serializer for Items
     Arguments:
         serializers
     """
+    category = CategorySerializer
+    condition = ConditionSerializer
     class Meta:
-        model = Message
-        fields = ('id', 'reservation', 'sender', 'recipient', 'status', 'sent_date', 'read_date', 'body')
-
+        model = Item
+        fields = ('id', 'owner', 'name', 'description', 'created_date', 'listed_date', 'brand', 'serial_number', 'category', 'condition', 'itemtags', 'active', 'draft', 'owner_full_name', 'owner_username' )
+        depth = 1
