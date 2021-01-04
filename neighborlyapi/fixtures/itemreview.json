@@ -1,0 +1,16 @@
+[
+    {
+        "model": "neighborlyapi.itemreview",
+        "pk": 1,
+        "fields": {
+            "reservation": 1,
+            "reviewer": 1,
+            "item": 3,
+            "rating": 3,
+            "description_accuracy": 2,
+            "created_date": "2021-01-03T06:48:53.746682Z",
+            "subject": "Ministry-of-Magic",
+            "details": "Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders."
+        }
+    }
+]

@@ -1,37 +1,36 @@
-"""View module for handling requests about ratings"""
+"""View module for handling requests about types of users"""
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from rest_framework.decorators import action
-from neighborlyapi.models.rating import Rating
+from neighborlyapi.models.type_of_user import TypeOfUser
 
-class Ratings(ViewSet):
-    """Ratings"""
+class TypesOfUsers(ViewSet):
+    """TypesOfUsers"""
 
     def list(self, request):
         '''
-        Handles GET requests to the /ratings resource
+        Handles GET requests to the /typesofusers resource
         Method arguments:
             request -- The full HTTP request object
-        URL: http://localhost:8000/ratings
+        URL: http://localhost:8000/typesofusers
         Request Method: GET
         Response:
-            list of all ratings
+            list of all types of users
         '''
-        ratings = Rating.objects.all()
+        types = TypeOfUser.objects.all()
 
-        serializer = RatingSerializer(
-            ratings, many=True, context={'request': request})
+        serializer = TypeOfUserSerializer(
+            types, many=True, context={'request': request})
 
         return Response(serializer.data)
 
-class Rating(serializers.HyperlinkedModelSerializer):
+class TypeOfUserSerializer(serializers.ModelSerializer):
     """JSON serializer for ratings
     Arguments:
         serializers
     """
     class Meta:
-        model = Rating
+        model = TypeOfUser
         fields = ('id', 'label')
-

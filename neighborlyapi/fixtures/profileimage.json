@@ -1,0 +1,18 @@
+[
+    {
+        "model": "neighborlyapi.profileimage",
+        "pk": 1,
+        "fields": {
+            "image": "/profileimages/sortinghat.com-1277aa21-8080-4fb9-96a3-07b7d74fa3a0.jpeg",
+            "profile": 1
+        }
+    },
+    {
+        "model": "neighborlyapi.profileimage",
+        "pk": 2,
+        "fields": {
+            "image": "/profileimages/hermionegranger.com-2c1e1765-e90b-4d95-a9c1-7cc38a909c41.jpeg",
+            "profile": 2
+        }
+    }
+]

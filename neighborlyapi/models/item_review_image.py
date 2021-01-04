@@ -1,6 +1,6 @@
 """Item Review ImageModel Module"""
 from django.db import models
-from .itemreview import ItemReview
+from .item_review import ItemReview
 
 class ItemReviewImage (models.Model):
     """
@@ -12,4 +12,4 @@ class ItemReviewImage (models.Model):
     image = models.ImageField(
         upload_to='itemreviewimages/', blank=True, null=True)
     item_review = models.ForeignKey(
-        ItemReview, on_delete=models.CASCADE, related_name="images", blank=True, null=True)
+        ItemReview, on_delete=models.CASCADE, related_name="itemreviewimages", blank=True, null=True)

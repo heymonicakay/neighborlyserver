@@ -11,13 +11,15 @@ from neighborlyapi.views import *
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', Users, 'user')
+router.register(r'profileimages', ProfileImages, 'profileimage')
 router.register(r'categories', Categories, 'category')
 router.register(r'conditions', Conditions, 'condition')
 router.register(r'tags', Tags, 'tag')
 router.register(r'itemtags', ItemTags, 'itemtag')
 router.register(r'descriptionaccuracys', DescriptionAccuracys, 'descriptionaccuracy')
 router.register(r'items', Items, 'item')
-
+router.register(r'messages', Messages, 'message')
+router.register(r'reservations', Reservations, 'reservation')
 
 urlpatterns = [
     path('', include(router.urls)),
@@ -27,4 +29,3 @@ urlpatterns = [
 ]
 
 urlpatterns += static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

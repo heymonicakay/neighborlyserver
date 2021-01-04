@@ -3,28 +3,28 @@
         "model": "neighborlyapi.neighbor",
         "pk": 1,
         "fields": {
-            "bio": "Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.",
-            "phone_number": "555-555-5555",
-            "street_one": "4 Privet Drive",
-            "street_two": "Under The Staircase",
+            "user": 1,
+            "bio": "Hufflepuff student in Harry Potter's year. Prefect and member of Dumbledore's Army. Married to Neville Longbottom.",
+            "phone_number": "615-200-2589",
+            "street_one": "9550 Lookout Court",
+            "street_two": "#45",
             "city": "Nashville",
             "state": "TN",
-            "zip": "37206",
-            "user": 1
+            "zip": "37201"
         }
     },
     {
         "model": "neighborlyapi.neighbor",
         "pk": 2,
         "fields": {
+            "user": 2,
             "bio": "Red hair crookshanks bludger Marauder’s Map Prongs sunshine daisies butter mellow Ludo Bagman. Beaters gobbledegook N.E.W.T., Honeydukes eriseD inferi Wormtail. Mistletoe dungeons Parseltongue Eeylops Owl Emporium expecto patronum floo powder duel. Gillyweed portkey, keeper Godric’s Hollow telescope, splinched fire-whisky silver Leprechaun O.W.L. stroke the spine. Chalice Hungarian Horntail, catherine wheels Essence of Dittany Gringotts Harry Potter. Prophecies Yaxley green eyes Remembrall horcrux hand of the servant. Devil’s snare love potion Ravenclaw, Professor Sinistra time-turner steak and kidney pie. Cabbage Daily Prophet letters from no one Dervish and Banges leg.",
             "phone_number": "444-444-4444",
             "street_one": "5 Diagon Alley",
             "street_two": "178",
             "city": "Nottingham",
             "state": "TN",
-            "zip": "37206",
-            "user": 2
+            "zip": "37206"
         }
     }
 ]

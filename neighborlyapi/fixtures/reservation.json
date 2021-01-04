@@ -1,0 +1,15 @@
+[
+    {
+        "model": "neighborlyapi.reservation",
+        "pk": 1,
+        "fields": {
+            "item": 3,
+            "user": 1,
+            "requested_start": "2020-12-22",
+            "requested_end": "2020-12-24",
+            "start": null,
+            "end": null,
+            "res_status": 5
+        }
+    }
+]

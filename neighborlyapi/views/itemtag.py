@@ -5,7 +5,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from neighborlyapi.models.itemtag import ItemTag
+from neighborlyapi.models.item_tag import ItemTag
 from neighborlyapi.models.tag import Tag
 from neighborlyapi.models.item import Item
 

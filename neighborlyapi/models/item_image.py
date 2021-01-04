@@ -13,4 +13,4 @@ class ItemImage(models.Model):
         upload_to='itemimages', height_field=None,
         width_field=None, max_length=None, null=True)
     item = models.ForeignKey(
-        Item, on_delete=models.DO_NOTHING, related_name="item_images")
+        Item, on_delete=models.DO_NOTHING, related_name="itemimages")

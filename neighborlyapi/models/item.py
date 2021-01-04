@@ -4,8 +4,7 @@ from django.db import models
 from .neighbor import Neighbor
 from .category import Category
 from .condition import Condition
-from .itemreview import ItemReview
-
+from .item_review import ItemReview
 
 class Item(models.Model):
     """
@@ -33,20 +32,6 @@ class Item(models.Model):
     condition = models.ForeignKey(
         Condition, on_delete=models.DO_NOTHING, related_name="cond_items")
 
-    # TODO: Add Unmapped Privacy Prop
-    # TODO: Add Unmapped item status Prop
-
-    @property
-    def reviews(self):
-        """
-        Property to access each items's associated itemreview instances
-
-        itemreviews_set is a queryset of itemreview objects for which the item instance(aka self)'s primary key exists as that itemreview's "item_id" foreign key
-        """
-
-        reviews = self.item_reviews_set.all()
-        return [reviews]
-
     @property
     def active(self):
         """Unmapped Prop"""
@@ -60,48 +45,47 @@ class Item(models.Model):
     @property
     def draft(self):
         """
-        Property to set item draft mode based on whether or not the item has a 'listed_date' property.
+        Property to set item draft mode based on whether or not the
+        item has a 'listed_date' property.
 
         Returns:
             Boolean -- Item in draft mode
         """
         listed = self.listed_date
 
-        if listed is None:
-            return True
-        else:
-            return False
+        return listed is None
 
-    @property
-    def average_rating(self):
-        """
-        Property to set each item's average rating
+    # @property
+    # def average_rating(self):
+    #     """
+    #     Property to set each item's average rating
 
-        Returns:
-            Number -- The average rating for the item
-        """
-        try:
-            reviews = ItemReview.objects.filter(
-                item=self)
+    #     Returns:
+    #         Number -- The average rating for the item
+    #     """
+    #     try:
+    #         reviews = ItemReview.objects.filter(
+    #             item=self)
 
-            total = 0
+    #         total = 0
 
-            for r in reviews:
-                total += r.score
+    #         for r in reviews:
+    #             total += r.score
 
-            if total > 0:
-                avg = total/ len(reviews)
-                return avg
-            else:
-                avg = null
-                return avg
+    #         if total > 0:
+    #             avg = total/ len(reviews)
+    #             return avg
+    #         else:
+    #             avg = null
+    #             return avg
 
-        except ItemReview.DoesNotExist:
-            avg = null
-            return avg
+    #     except ItemReview.DoesNotExist:
+    #         avg = null
+    #         return avg
 
     @property
     def review_count(self):
+        """Unmapped Prop"""
         try:
             reviews = ItemReview.objects.filter(item=self)
             total = len(reviews)

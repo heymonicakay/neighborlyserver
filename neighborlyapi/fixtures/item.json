@@ -33,7 +33,7 @@
         "model": "neighborlyapi.item",
         "pk": 3,
         "fields": {
-            "owner": 1,
+            "owner": 2,
             "name": "Crystal Ball",
             "description": "The Magic Kind",
             "created_date": "2020-11-18",
@@ -45,3 +45,4 @@
         }
     }
 ]
+

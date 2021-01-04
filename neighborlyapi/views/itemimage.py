@@ -11,24 +11,24 @@ from rest_framework.viewsets import ViewSet
 from rest_framework import serializers, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from ..models.profile_image import ProfileImage
-from ..models.neighbor import Neighbor
+from ..models.item_image import ItemImage
+from ..models.item import Item
 
-class ProfileImages(ViewSet):
+class ItemImages(ViewSet):
     """docstrings"""
 
     def create(self, request):
         """docstrings"""
-        profile_image = ProfileImage()
+        item_image = ItemImage()
 
         format, imgstr = request.data["image"].split(';base64,')
         ext = format.split('/')[-1]
         data = ContentFile(base64.b64decode(imgstr), name=f'"image"-{uuid.uuid4()}.{ext}')
 
-        profile_image.image = data
+        item_image.image = data
 
-        profile_image.save()
-        serializer = ProfileImageSerializer(profile_image, context={'request': request})
+        item_image.save()
+        serializer = ItemImageSerializer(item_image, context={'request': request})
 
         return Response(
             serializer.data,
@@ -37,10 +37,10 @@ class ProfileImages(ViewSet):
 
 
     def list(self, request):
-        """Handles GET request for posts by logged in user"""
-        images = ProfileImage.objects.all()
+        """Handles GET request for item images"""
+        images = ItemImage.objects.all()
 
-        serializer = ProfileImageSerializer(
+        serializer = ItemImageSerializer(
             images, many=True, context={'request': request}
         )
         return Response(
@@ -51,10 +51,10 @@ class ProfileImages(ViewSet):
     def retrieve(self, request, pk=None):
         """Handle PUT requests for posts"""
         try:
-            profile_image = ProfileImage.objects.get(pk=pk)
+            item_image = ItemImage.objects.get(pk=pk)
 
-            serializer = ProfileImageSerializer(
-                profile_image, context={'request': request})
+            serializer = ItemImageSerializer(
+                item_image, context={'request': request})
 
             return Response(
                 serializer.data,
@@ -65,18 +65,18 @@ class ProfileImages(ViewSet):
             return HttpResponseServerError(ex)
 
     @action(methods=['patch'], detail=True)
-    def savetoprofile(self, request, pk=None):
+    def savetoitem(self, request, pk=None):
         """Manages admins approving posts"""
 
-        user_profile = Neighbor.objects.get(user=request.auth.user)
-        profile_image = ProfileImage.objects.get(pk=pk)
+        item = Item.objects.get(pk=request.data["item"])
+        item_image = ItemImage.objects.get(pk=pk)
 
-        profile_image.profile = user_profile
+        item_image.item = item
 
-        profile_image.save()
+        item_image.save()
 
-        serializer = ProfileImageSerializer(
-            profile_image, context={'request': request}
+        serializer = ItemImageSerializer(
+            item_image, context={'request': request}
         )
 
         return Response(
@@ -90,15 +90,15 @@ class ProfileImages(ViewSet):
             Response -- 200, 404, or 500 status code
         """
         try:
-            profile_image = ProfileImage.objects.get(pk=pk)
-            profile_image.delete()
+            item_image = ItemImage.objects.get(pk=pk)
+            item_image.delete()
 
             return Response(
                 {},
                 status=status.HTTP_204_NO_CONTENT
             )
 
-        except ProfileImage.DoesNotExist as ex:
+        except ItemImage.DoesNotExist as ex:
             return Response(
                 {'message': ex.args[0]},
                 status=status.HTTP_404_NOT_FOUND
@@ -110,8 +110,8 @@ class ProfileImages(ViewSet):
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
-class ProfileImageSerializer(serializers.ModelSerializer):
-    """Serializer for ProfileImage """
+class ItemImageSerializer(serializers.ModelSerializer):
+    """Serializer for ItemImage """
     class Meta:
-        model = ProfileImage
-        fields = ('id', 'image', 'profile')
+        model = ItemImage
+        fields = ('id', 'image', 'item')

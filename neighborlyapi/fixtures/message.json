@@ -1,0 +1,14 @@
+[
+    {
+        "model": "neighborlyapi.message",
+        "pk": 1,
+        "fields": {
+            "reservation": 1,
+            "sender": 1,
+            "recipient": 2,
+            "sent_date": "2021-01-03T06:48:53.746682Z",
+            "read_date": null,
+            "body": "Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders."
+        }
+    }
+]

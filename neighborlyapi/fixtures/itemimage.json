@@ -1,0 +1,18 @@
+[
+    {
+        "model": "neighborlyapi.itemimage",
+        "pk": 1,
+        "fields": {
+            "image": "/itemimages/spade.jpg",
+            "item": 3
+        }
+    },
+    {
+        "model": "neighborlyapi.itemimage",
+        "pk": 2,
+        "fields": {
+            "image": "/itemimages/broom.jpeg",
+            "item": 1
+        }
+    }
+]

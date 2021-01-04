@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from rest_framework.decorators import action
-from neighborlyapi.models.descriptionaccuracy import DescriptionAccuracy
+from neighborlyapi.models.description_accuracy import DescriptionAccuracy
 
 class DescriptionAccuracys(ViewSet):
     """DescriptionAccuracys"""
@@ -21,7 +21,7 @@ class DescriptionAccuracys(ViewSet):
         Response:
             list of all descriptionaccuracys
         '''
-        descriptionaccuracys = DescriptionAccuracy.objects.all() 
+        descriptionaccuracys = DescriptionAccuracy.objects.all()
 
         serializer = DescriptionAccuracySerializer(
             descriptionaccuracys, many=True, context={'request': request})
