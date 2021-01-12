@@ -9,6 +9,7 @@ from .category import Categories
 from .condition import Conditions
 from .message import Messages
 from .itemtag import ItemTags
+from .itemimage import ItemImages
 from .descriptionaccuracy import DescriptionAccuracys
 from .item import Items
 from .typeofuser import TypesOfUsers

@@ -32,6 +32,31 @@ class Items(ViewSet):
             list of all items
         '''
         items = Item.objects.all()
+        current_user = Neighbor.objects.get(user=request.auth.user)
+
+        owner_id = self.request.query_params.get('owner_id', None)
+        category_id = self.request.query_params.get('category_id', None)
+
+        if owner_id is not None:
+            # http://localhost:8000/items?owner_id=10
+            owner = Neighbor.objects.get(pk=owner_id)
+
+            items_by_owner = items.filter(
+                owner=owner)
+
+            serializer = ItemSerializer(
+                items_by_owner, many=True, context={'request': request}
+            )
+            return Response(
+                serializer.data,
+                status=status.HTTP_200_OK
+            )
+
+        elif category_id is not None:
+            # http://localhost:8000/items?category_id=2
+            category = Category.objects.get(pk=category_id)
+            posts = posts.filter(
+                category=category)
 
         serializer = ItemSerializer(
             items, many=True, context={'request': request})

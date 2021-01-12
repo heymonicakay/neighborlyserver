@@ -57,6 +57,18 @@ class Users(ViewSet):
                 {'message': 'User does not exist.'},
                 status=status.HTTP_400_BAD_REQUEST
             )
+    @action(methods=['get'], detail=False)
+    def current_user(self, request):
+        """docstrings"""
+        current_user = Neighbor.objects.get(user=request.auth.user)
+
+        serializer = NeighborSerializer(
+            current_user, context={'request': request})
+
+        return Response(
+            serializer.data,
+            status=status.HTTP_200_OK
+        )
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for Users
@@ -76,5 +88,5 @@ class NeighborSerializer(serializers.HyperlinkedModelSerializer):
     user = UserSerializer(many=False)
     class Meta:
         model = Neighbor
-        fields = ('id', 'bio', 'user', 'phone_number', 'full_name', 'city', 'state', 'zip' )
+        fields = ('id', 'bio', 'user', 'phone_number', 'full_name', 'city', 'state', 'zip', 'images' )
 

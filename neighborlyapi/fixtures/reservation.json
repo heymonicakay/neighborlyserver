@@ -11,5 +11,18 @@
             "end": null,
             "res_status": 5
         }
+    },
+    {
+        "model": "neighborlyapi.reservation",
+        "pk": 2,
+        "fields": {
+            "item": 2,
+            "user": 2,
+            "requested_start": "2020-12-22",
+            "requested_end": "2020-12-24",
+            "start": null,
+            "end": null,
+            "res_status": 1
+        }
     }
 ]

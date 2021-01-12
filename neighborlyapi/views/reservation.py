@@ -25,7 +25,6 @@ class Reservations(ViewSet):
         '''
         reservations = Reservation.objects.all()
 
-
         serializer = ReservationSerializer(
             reservations, many=True, context={'request': request})
 
@@ -49,6 +48,48 @@ class Reservations(ViewSet):
         serializer = ReservationSerializer(res, context={'request': request})
         return Response(serializer.data)
 
+    def create(self, request):
+        '''
+        Handles Post requests to the /reservations resource
+        Method arguments:
+            request -- The full HTTP request object
+        URL: http://localhost:8000/messages
+        Request Method: POST
+        Payload: message object
+            {
+                "item_id": ,
+                "requested_start": "2020-01-30"
+                "requested_end": "2020-02-02"
+            }
+            Response:
+            {
+            }
+        '''
+        current_user = Neighbor.objects.get(user=request.auth.user)
+        item = Item.objects.get(pk=request.data["item_id"])
+        start = request.data['requested_start']
+        end = request.data['requested_end']
+
+        reservation = Reservation()
+
+
+        reservation.user = current_user
+        reservation.item = item
+        reservation.res_status = 1
+        reservation.requested_start = start
+        reservation.requested_end = end
+
+        try:
+            reservation.save()
+            serializer = ReservationSerializer(reservation, context={'request': request})
+
+            return Response(
+                serializer.data,
+                status=status.HTTP_201_CREATED
+            )
+
+        except ValidationError as ex:
+            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
 class ReservationSerializer(serializers.ModelSerializer):
     """JSON serializer for reservations
@@ -58,4 +99,4 @@ class ReservationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reservation
         fields = ('id', 'item', 'user', 'requested_start', 'messages', 'requested_end', 'start', 'end', 'res_status')
-        depth = 1
+        depth = 3

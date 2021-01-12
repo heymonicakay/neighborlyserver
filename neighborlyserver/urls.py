@@ -12,6 +12,7 @@ from neighborlyapi.views import *
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', Users, 'user')
 router.register(r'profileimages', ProfileImages, 'profileimage')
+router.register(r'itemimages', ItemImages, 'itemimage')
 router.register(r'categories', Categories, 'category')
 router.register(r'conditions', Conditions, 'condition')
 router.register(r'tags', Tags, 'tag')

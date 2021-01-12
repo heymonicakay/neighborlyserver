@@ -40,9 +40,24 @@ class ItemImages(ViewSet):
         """Handles GET request for item images"""
         images = ItemImage.objects.all()
 
+        item_id = self.request.query_params.get('item_id', None)
+
+        if item_id is not None:
+            # http://localhost:8000/itemimages?item_id=1
+            images = images.filter(item=item_id)
+
+            serializer = ItemImageSerializer(
+                images, many=True, context={'request': request}
+            )
+            return Response(
+                serializer.data,
+                status=status.HTTP_200_OK
+            )
+
         serializer = ItemImageSerializer(
             images, many=True, context={'request': request}
         )
+
         return Response(
             serializer.data,
             status=status.HTTP_200_OK

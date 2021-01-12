@@ -8,7 +8,31 @@
             "recipient": 2,
             "sent_date": "2021-01-03T06:48:53.746682Z",
             "read_date": null,
-            "body": "Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders."
+            "body": "Hi is this available?"
+        }
+    },
+    {
+        "model": "neighborlyapi.message",
+        "pk": 2,
+        "fields": {
+            "reservation": 1,
+            "sender": 2,
+            "recipient": 1,
+            "sent_date": "2021-01-04T08:48:53.746682Z",
+            "read_date": null,
+            "body": "It sure is!"
+        }
+    },
+    {
+        "model": "neighborlyapi.message",
+        "pk": 3,
+        "fields": {
+            "reservation": 2,
+            "sender": 2,
+            "recipient": 1,
+            "sent_date": "2021-01-03T06:48:53.746682Z",
+            "read_date": null,
+            "body": "Hi is this available?"
         }
     }
 ]

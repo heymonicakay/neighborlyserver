@@ -3,8 +3,8 @@
         "model": "neighborlyapi.itemimage",
         "pk": 1,
         "fields": {
-            "image": "/itemimages/spade.jpg",
-            "item": 3
+            "image": "/itemimages/cauldron.jpg",
+            "item": 2
         }
     },
     {
@@ -13,6 +13,14 @@
         "fields": {
             "image": "/itemimages/broom.jpeg",
             "item": 1
+        }
+    },
+    {
+        "model": "neighborlyapi.itemimage",
+        "pk": 3,
+        "fields": {
+            "image": "/itemimages/crystal_ball.jpg",
+            "item": 3
         }
     }
 ]
