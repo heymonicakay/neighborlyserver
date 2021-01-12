@@ -184,6 +184,22 @@ class Items(ViewSet):
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
+    def destroy(self, request, pk=None):
+        """Handle DELETE requests for a single post
+        Returns:
+            Response -- 200, 404, or 500 status code
+        """
+        try:
+            item = Item.objects.get(pk=pk)
+            item.delete()
+
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+        except Item.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     @action(methods=['post'], detail=True)
     def reserve(self, request, pk=None):
@@ -297,5 +313,5 @@ class ItemSerializer(serializers.ModelSerializer):
     condition = ConditionSerializer
     class Meta:
         model = Item
-        fields = ('id', 'owner', 'name', 'description', 'created_date', 'listed_date', 'brand', 'serial_number', 'reservations', 'category', 'condition', 'itemtags', 'itemimages', 'active', 'draft', 'owner_full_name', 'owner_username', 'item_reviews' )
+        fields = ('id', 'owner', 'name', 'description', 'created_date', 'listed_date', 'brand', 'serial_number', 'reservations', 'category', 'category_id', 'condition', 'itemtags', 'itemimages', 'active', 'draft', 'owner_full_name', 'owner_username', 'item_reviews' )
         depth = 1
