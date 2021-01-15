@@ -12,12 +12,12 @@ class Neighbor(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     bio = models.CharField(max_length=500)
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=12)
     street_one = models.CharField(max_length=100)
-    street_two = models.CharField(max_length=100)
-    city = models.CharField(max_length=50)
+    street_two = models.CharField(max_length=8)
+    city = models.CharField(max_length=17)
     state = models.CharField(max_length=2)
-    zip = models.CharField(max_length=12)
+    zip = models.CharField(max_length=10)
 
     # @property
     # def reviews(self):
