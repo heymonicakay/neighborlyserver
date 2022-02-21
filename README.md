@@ -1,13 +1,13 @@
-## Neighborly Server
+## Neighborly
 
-<b style="font-size: 20px;"><i>... so fetch!</i></b>
+<b style="font-size: 20px;"><i>... serve it up!</i></b>
 
 ## Learning Goals
 
-- Expand understanding of ORM, React & full-stack development
-- Set up the models and ViewSets to allow users to upload images
-- Implement full CRUD functionality
-- Implement authentication using Django
+- Use Django Models and the ORM to write more specific queries that return precisely the data requested.
+- Build upon my knowledge of classes and inheritence by creating class based views in the Django Rest Framework.
+- Create logical responses whose content and messages are useful to the client, especially regarding errors.
+- Learn how to use Pillow to configure a Django project for image uploads.
 
 ## Features
 
